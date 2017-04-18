@@ -2,6 +2,7 @@ package utg.sp.thompson.treepair;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Vector;
 
 import de.uniwue.smooth.draw.IpeDraw;
@@ -291,16 +292,18 @@ public class TreePair implements Arity {
    * @return the generator
    */
   public static TreePair generator(int n) {
-    Tree c = Tree.allRightTree(n + 1);
-    Tree d = Tree.allRightTree(n + 2);
+    Tree c = Tree.allRightTree(n + 2);
+    Tree d = Tree.allRightTree(n + 1);
 
     Node node = d.root;
     for (int i = 1; i < n + 1; i++) {
       node = node.rightMostChild();
     }
 
+    Random rand = new Random();
+    int randomIndex = rand.nextInt(ARY);
     for (int i = 0; i < ARY; i++) {
-      node.children[i] = new Node(ARY);
+      node.children[randomIndex].children[i] = new Node(ARY);
     }
 
     d.normalize();
