@@ -285,13 +285,25 @@ public class TreePair implements Arity {
   }
 
   /**
-   * computes the generators fi of the Thompson group F
+   * computes the generators f_{n} of the Thompson group F
    *
    * @param n
-   *          the index of the generator
+   *          the generator number
    * @return the generator
    */
   public static TreePair generator(int n) {
+    return generator(n / (ARI-1), n % (ARI-1));
+  }
+  /**
+   * computes the generators f_{n} of the Thompson group F
+   *
+   * @param n
+   *          the depth of the tree
+   * @param m
+   *          the leave number to attach
+   * @return the generator
+   */
+  public static TreePair generator(int n, int m) {
     Tree c = Tree.allRightTree(n + 2);
     Tree d = Tree.allRightTree(n + 1);
 
@@ -300,10 +312,8 @@ public class TreePair implements Arity {
       node = node.rightMostChild();
     }
 
-    Random rand = new Random();
-    int randomIndex = rand.nextInt(ARY);
     for (int i = 0; i < ARY; i++) {
-      node.children[randomIndex].children[i] = new Node(ARY);
+      node.children[m].children[i] = new Node(ARY);
     }
 
     d.normalize();

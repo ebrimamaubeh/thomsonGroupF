@@ -8,7 +8,7 @@ import utg.sp.thompson.utils.Message;
  * @author jeb
  *
  */
-public class TestRelations {
+public class TestRelations { 
   public static Message m = new Message("TreePairTest");
 
   /**

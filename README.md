@@ -1,1 +1,1 @@
-Thomson group with prof Biollat 
+Thomson group with prof Boillat 
