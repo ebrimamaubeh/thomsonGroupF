@@ -2,7 +2,7 @@ package utg.sp.thompson.treepair;
 
 import utg.sp.thompson.tree.Tree;
 import utg.sp.thompson.utils.Message;
-
+ 
 /**
  * A test class for the methods of the TreePair class
  *

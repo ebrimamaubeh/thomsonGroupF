@@ -2,7 +2,6 @@ package utg.sp.thompson.treepair;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Random;
 import java.util.Vector;
 
 import de.uniwue.smooth.draw.IpeDraw;
@@ -292,7 +291,7 @@ public class TreePair implements Arity {
    * @return the generator
    */
   public static TreePair generator(int n) {
-    return generator(n / (ARI-1), n % (ARI-1));
+    return generator(n / (ARY-1), n % (ARY-1));
   }
   /**
    * computes the generators f_{n} of the Thompson group F
